@@ -1,38 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLOCK BOX | Premium Store</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+<!-- Pehle wala HTML code... uske baad body end hone se pehle ye add karein -->
 
-    <nav class="navbar">
-        <div class="logo">BLOCK<span>BOX</span></div>
-        <div class="nav-right">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="cart.html" class="cart-btn">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </a>
+<!-- Product Details Modal -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modal-body">
+            <!-- Details dynamic load hongi -->
         </div>
-    </nav>
-
-    <header class="hero">
-        <h1>Premium Computer Accessories</h1>
-        <p>Experience Elegance with Block Box</p>
-    </header>
-
-    <div class="container">
-        <section class="product-grid" id="product-list">
-            <!-- Products will be loaded here by script.js -->
-        </section>
     </div>
+</div>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-    <script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
