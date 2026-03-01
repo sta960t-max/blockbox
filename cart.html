@@ -7,25 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo">BLACK<span>BOX</span></div>
         <a href="index.html" class="btn">Back to Shop</a>
     </nav>
 
-    <div class="cart-container">
+    <div class="container cart-page">
         <h2>Your Shopping Cart</h2>
-        <div id="cart-items-list">
-            <!-- Items added will appear here -->
+        <div id="cart-items-container">
+            <!-- Cart Items go here -->
         </div>
-        <div class="cart-summary">
+        <div class="cart-summary neumorph-card">
             <h3>Total Amount: ₹<span id="total-price">0</span></h3>
-            <button class="btn checkout-btn" onclick="checkout()">Checkout Now</button>
+            <button class="btn checkout-btn" onclick="checkout()">Place Order</button>
         </div>
     </div>
 
     <script src="script.js"></script>
     <script>
-        // Sirf cart page ke liye display logic chalayein
+        // Execute displayCart only on this page
         window.onload = displayCart;
     </script>
 </body>
