@@ -1,16 +1,45 @@
-<!-- Pehle wala HTML code... uske baad body end hone se pehle ye add karein -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Box | Premium Accessories</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
 
-<!-- Product Details Modal -->
-<div id="productModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div id="modal-body">
-            <!-- Details dynamic load hongi -->
+    <nav class="navbar">
+        <div class="logo">BLACK<span>BOX</span></div>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="cart.html" class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Ultimate Tech Gear</h1>
+        <p>Premium Accessories in 3D Neumorphic Design</p>
+    </header>
+
+    <div class="container">
+        <section class="product-grid" id="product-list">
+            <!-- Products Loaded by JS -->
+        </section>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
         </div>
     </div>
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-<script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
