@@ -3,35 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Box | Pro Gaming Store</title>
+    <title>Black Box | Premium Store</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">BLACK<span>BOX</span></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="cart.html" class="cart-icon">
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="cart.html" class="cart-btn">
                 <i class="fas fa-shopping-cart"></i>
                 <span id="cart-count">0</span>
-            </a></li>
-        </ul>
+            </a>
+        </div>
     </nav>
 
     <header class="hero">
-        <h1>Ultimate Gear for Pros</h1>
-        <p>Experience the Neumorphic 3D Store</p>
+        <h1>Premium Computer Accessories</h1>
+        <p>Experience Elegance with Black Box</p>
     </header>
 
-    <!-- Product Grid -->
-    <section class="product-grid" id="product-container">
-        <!-- JS se 12 products yahan generate honge -->
-    </section>
+    <div class="container">
+        <section class="product-grid" id="product-list">
+            <!-- Products will be loaded here by script.js -->
+        </section>
+    </div>
 
-    <!-- Vanilla Tilt for 3D effect -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
