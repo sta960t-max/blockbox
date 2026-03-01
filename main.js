@@ -1,37 +1,37 @@
-// 12 Products Data
+// 12 Professional Products Data
 const products = [
-    { id: 1, name: "RGB Mechanical Keyboard", price: 4500, img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=400" },
-    { id: 2, name: "Wireless Gaming Mouse", price: 2200, img: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=400" },
-    { id: 3, name: "4K Curved Monitor", price: 25000, img: "https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?q=80&w=400" },
-    { id: 4, name: "Gaming Headset 7.1", price: 3500, img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400" },
-    { id: 5, name: "RTX 4090 GPU", price: 155000, img: "https://images.unsplash.com/photo-1591488320449-011701bb6704?q=80&w=400" },
-    { id: 6, name: "16GB DDR5 RAM", price: 8000, img: "https://images.unsplash.com/photo-1562976540-1502c2145186?q=80&w=400" },
-    { id: 7, name: "2TB NVMe SSD", price: 12000, img: "https://images.unsplash.com/photo-1597872200370-499df51bbd30?q=80&w=400" },
-    { id: 8, name: "Liquid CPU Cooler", price: 9500, img: "https://images.unsplash.com/photo-1587202392420-f1c5d0e74f4b?q=80&w=400" },
-    { id: 9, name: "Gaming Chair Black", price: 18000, img: "https://images.unsplash.com/photo-1598550476439-6847785fce66?q=80&w=400" },
-    { id: 10, name: "Webcam 1080p Pro", price: 4000, img: "https://images.unsplash.com/photo-1588508065123-287b28e013da?q=80&w=400" },
-    { id: 11, name: "Microphone Condenser", price: 6500, img: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=400" },
-    { id: 12, name: "RGB Mousepad XL", price: 1500, img: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=400" }
+    { id: 1, name: "Mechanical Keyboard", price: 4999, img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=400" },
+    { id: 2, name: "Gaming Mouse RGB", price: 2499, img: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=400" },
+    { id: 3, name: "4K Gaming Monitor", price: 28999, img: "https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?q=80&w=400" },
+    { id: 4, name: "Wireless Headset", price: 5999, img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=400" },
+    { id: 5, name: "RTX 4080 GPU", price: 115000, img: "https://images.unsplash.com/photo-1591488320449-011701bb6704?q=80&w=400" },
+    { id: 6, name: "Gaming PC Case", price: 8500, img: "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=400" },
+    { id: 7, name: "External SSD 1TB", price: 7200, img: "https://images.unsplash.com/photo-1597872200370-499df51bbd30?q=80&w=400" },
+    { id: 8, name: "Streaming Webcam", price: 4500, img: "https://images.unsplash.com/photo-1588508065123-287b28e013da?q=80&w=400" },
+    { id: 9, name: "Gaming Chair", price: 15999, img: "https://images.unsplash.com/photo-1598550476439-6847785fce66?q=80&w=400" },
+    { id: 10, name: "Liquid CPU Cooler", price: 10500, img: "https://images.unsplash.com/photo-1587202392420-f1c5d0e74f4b?q=80&w=400" },
+    { id: 11, name: "16GB DDR5 RAM", price: 6500, img: "https://images.unsplash.com/photo-1562976540-1502c2145186?q=80&w=400" },
+    { id: 12, name: "Gaming Microphone", price: 8999, img: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=400" }
 ];
 
-// Display Products on Index Page
-const productList = document.getElementById('product-list');
-if (productList) {
+// Display products on index page
+const container = document.getElementById('product-container');
+if (container) {
     products.forEach(p => {
-        productList.innerHTML += `
+        container.innerHTML += `
             <div class="card" data-tilt>
                 <img src="${p.img}" alt="${p.name}">
                 <h3>${p.name}</h3>
-                <p>₹${p.price}</p>
-                <button class="btn" onclick="addToCart(${p.id})">Add To Cart</button>
+                <p>₹${p.price.toLocaleString()}</p>
+                <button class="btn" onclick="addToCart(${p.id})">Add to Cart</button>
             </div>
         `;
     });
-    // Initialize 3D Tilt
+    // Initialize 3D Tilt after cards are added
     VanillaTilt.init(document.querySelectorAll(".card"), { max: 15, speed: 400, glare: true, "max-glare": 0.2 });
 }
 
-// Cart Logic
+// Cart System
 let cart = JSON.parse(localStorage.getItem('blackbox_cart')) || [];
 
 function addToCart(id) {
@@ -43,37 +43,37 @@ function addToCart(id) {
 }
 
 function updateCartCount() {
-    const countSpan = document.getElementById('cart-count');
-    if (countSpan) countSpan.innerText = cart.length;
+    const count = document.getElementById('cart-count');
+    if (count) count.innerText = cart.length;
 }
 
-// Display Cart Items in cart.html
 function displayCart() {
-    const container = document.getElementById('cart-items-container');
-    const totalSpan = document.getElementById('total-price');
-    if (!container) return;
+    const cartList = document.getElementById('cart-items-list');
+    const totalPrice = document.getElementById('total-price');
+    if (!cartList) return;
 
     if (cart.length === 0) {
-        container.innerHTML = "<h3>Your cart is empty</h3>";
+        cartList.innerHTML = "<h3>Your cart is empty.</h3>";
+        totalPrice.innerText = "0";
         return;
     }
 
-    container.innerHTML = "";
+    cartList.innerHTML = "";
     let total = 0;
     cart.forEach((item, index) => {
         total += item.price;
-        container.innerHTML += `
+        cartList.innerHTML += `
             <div class="cart-item">
                 <img src="${item.img}">
                 <div>
                     <h4>${item.name}</h4>
-                    <p>₹${item.price}</p>
+                    <p>₹${item.price.toLocaleString()}</p>
                 </div>
-                <button class="btn" onclick="removeFromCart(${index})" style="color: #ff4d4d;">Remove</button>
+                <button class="btn" onclick="removeFromCart(${index})" style="color: #ff4757;">Remove</button>
             </div>
         `;
     });
-    totalSpan.innerText = total;
+    totalPrice.innerText = total.toLocaleString();
 }
 
 function removeFromCart(index) {
@@ -83,4 +83,14 @@ function removeFromCart(index) {
     updateCartCount();
 }
 
+function checkout() {
+    if(cart.length === 0) return alert("Cart is empty!");
+    alert("Order Placed Successfully!");
+    cart = [];
+    localStorage.removeItem('blackbox_cart');
+    displayCart();
+    updateCartCount();
+}
+
+// Initial count setup
 updateCartCount();
