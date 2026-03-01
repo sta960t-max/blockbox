@@ -12,21 +12,21 @@
         <a href="index.html" class="btn">Back to Shop</a>
     </nav>
 
-    <div class="cart-wrapper">
+    <div class="cart-container">
         <h2>Your Shopping Cart</h2>
-        <div id="cart-items-container">
-            <!-- Cart items will appear here -->
+        <div id="cart-items-list">
+            <!-- Items added will appear here -->
         </div>
-        <div class="cart-total" id="cart-total-section">
-            <h3>Total: ₹<span id="total-price">0</span></h3>
-            <button class="btn checkout-btn" onclick="alert('Order Placed Successfully!')">Checkout Now</button>
+        <div class="cart-summary">
+            <h3>Total Amount: ₹<span id="total-price">0</span></h3>
+            <button class="btn checkout-btn" onclick="checkout()">Checkout Now</button>
         </div>
     </div>
 
     <script src="script.js"></script>
     <script>
-        // Sirf cart page ke liye display logic
-        displayCart();
+        // Sirf cart page ke liye display logic chalayein
+        window.onload = displayCart;
     </script>
 </body>
 </html>
