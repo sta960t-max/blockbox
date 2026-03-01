@@ -3,31 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlOck Box | Your Cart</title>
+    <title>Black Box | Your Cart</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">BLOCK<span>BOX</span></div>
+        <div class="logo">BLACK<span>BOX</span></div>
         <a href="index.html" class="btn">Back to Shop</a>
     </nav>
 
     <div class="container cart-page">
         <h2>Your Shopping Cart</h2>
-        <div id="cart-items-container">
-            <!-- Cart Items go here -->
-        </div>
-        <div class="cart-summary neumorph-card">
-            <h3>Total Amount: ₹<span id="total-price">0</span></h3>
-            <button class="btn checkout-btn" onclick="checkout()">Place Order</button>
+        <div id="cart-items-container"></div>
+        <div class="cart-summary">
+            <h3>Total: ₹<span id="total-price">0</span></h3>
+            <button class="btn checkout-btn" onclick="checkout()">Checkout Now</button>
         </div>
     </div>
 
     <script src="script.js"></script>
-    <script>
-        // Execute displayCart only on this page
-        window.onload = displayCart;
-    </script>
+    <script>window.onload = displayCart;</script>
 </body>
 </html>
