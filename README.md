@@ -1,4 +1,4 @@
-# 🖥️ Black Box — Premium Computer Accessories Store
+# 🖥️ BlOck Box — Premium Computer Accessories Store
 
 > College Project | HTML + CSS + Vanilla JavaScript  
 > Neumorphism UI + 3D Animations + Fully Responsive
@@ -58,7 +58,7 @@ blackbox/
 git clone https://github.com/yourusername/blackbox.git
 
 # Open in browser
-cd blackbox
+cd blOckbox
 open index.html
 # OR use Live Server in VS Code
 ```
